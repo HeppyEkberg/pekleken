@@ -1,0 +1,40 @@
+<?php
+namespace App\Http\Controllers;
+
+use App\Services\QuestionService;
+
+/**
+ * @property QuestionService question
+ */
+class HomeController
+{
+    private $question;
+
+    public function __construct()
+    {
+        $this->question = new QuestionService();
+    }
+
+    public function index() {
+        $question = $this->question->get();
+
+        return view('home', compact('question'));
+    }
+
+
+    public function random() {
+        $question = $this->question->get();
+
+        return view('question.markup', compact('question'));
+    }
+
+    public function snusk() {
+        $this->question->toggleSnusk();
+        return redirect()->route('home.index');
+    }
+
+    public function clear() {
+        $this->question->clear();
+        return redirect()->route('home.index');
+    }
+}
