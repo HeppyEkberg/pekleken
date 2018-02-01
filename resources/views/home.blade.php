@@ -8,7 +8,11 @@
 
     <div id="wrapper">
         <div id="content"><a href="/" class="home-link"><p class="site-title">Pekleken.se</p></a>
-            @include('question.markup')
+            @if(is_null($question))
+                @include('question.reset')
+            @else
+                @include('question.markup')
+            @endif
             <div><a href="/" id="RandomQuestion"><img src="/gfx/dice.png" alt=""></a></div>
             <div style="clear: both;"></div>
         </div>

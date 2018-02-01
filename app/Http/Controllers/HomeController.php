@@ -25,6 +25,11 @@ class HomeController
     public function random() {
         $question = $this->question->get();
 
+        if(is_null($question)) {
+            return view('question.reset');
+        }
+
+
         return view('question.markup', compact('question'));
     }
 
