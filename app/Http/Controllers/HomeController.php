@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\Question;
 use App\Services\QuestionService;
 
 /**
@@ -21,6 +22,9 @@ class HomeController
         return view('home', compact('question'));
     }
 
+    public function show(Question $question) {
+        return view('home', compact('question'));
+    }
 
     public function random() {
         $question = $this->question->get();
