@@ -12,6 +12,9 @@
 */
 
 
+Route::get('youtube/nellie', 'YoutubeController@nellie')->name('youtube.nellie');
+Route::get('youtube/police-roxanne', 'YoutubeController@police')->name('youtube.police');
+
 Route::post('/ajax/randomquestion', 'HomeController@random')->name('home.random');
 Route::get('/ajax/randomquestion', 'HomeController@random')->name('home.random');
 Route::get('/clear', 'HomeController@clear')->name('home.clear');

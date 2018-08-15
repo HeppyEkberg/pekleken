@@ -7,7 +7,7 @@
 
 
     <div id="wrapper">
-        <div id="content"><a href="/" class="home-link"><p class="site-title">Pekleken.se</p></a>
+        <div id="content">
             @if(is_null($question))
                 @include('question.reset')
             @else
